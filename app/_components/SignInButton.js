@@ -11,7 +11,7 @@ function SignInButton() {
           height='28'
           width='28'
         />
-        <span className='text-primary-900'>Continue with GitHub</span>
+        <span className='text-primary-900'>使用GitHub登录</span>
       </button>
     </form>
   )
