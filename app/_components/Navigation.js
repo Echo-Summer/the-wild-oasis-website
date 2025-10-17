@@ -46,7 +46,7 @@ export default async function Navigation() {
               href='/account'
               className='hover:text-accent-400 transition-colors'
             >
-              Guest area
+              用户中心
             </Link>
           )}
         </li>
