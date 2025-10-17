@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .spinner {
+    margin: 3.2rem auto 1.6rem;
+    width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid theme('colors.primary.900');
+    border-right-color: theme('colors.primary.200');
+    animation: rotate 1s infinite linear;
+  }
+
+  .spinner-mini {
+    margin: 0;
+    width: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid theme('colors.primary.200');
+    border-right-color: transparent;
+    animation: rotate 1s infinite linear;
+  }
+
+  @keyframes rotate {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+}
+
+/* For data picker */
+
+/* .rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: theme('colors.accent.500') !important;
+  --rdp-background-color: theme('colors.accent.600') !important;
+  margin: 0 !important;
+} */
+/* For data picker */
+
+.rdp-root {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: #d4a574 !important;
+  --rdp-accent-background-color: #d4a574 !important;
+  --rdp-background-color: #f5e6d3 !important;
+  --rdp-day-height: 44px !important;
+  --rdp-day-width: 44px !important;
+  --rdp-selected-border: 0px solid #d4a574 !important;
+  margin: 0 !important;
+}
+
+.rdp {
+  --rdp-cell-size: 32px !important;
+  --rdp-accent-color: #d4a574 !important;
+  --rdp-accent-background-color: #f5e6d3 !important;
+  --rdp-background-color: #f5e6d3 !important;
+  --rdp-day-height: 44px !important;
+  --rdp-day-width: 44px !important;
+  --rdp-selected-border: 0px solid #d4a574 !important;
+  margin: 0 !important;
+}
+
+/* 范围开始 - 右侧有背景延伸 */
+.rdp-day_range_start,
+td.rdp-day.rdp-day_range_start {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 50%,
+    #f5e6d3 50%,
+    #f5e6d3 100%
+  ) !important;
+}
+
+.rdp-day_range_start button,
+td.rdp-day.rdp-day_range_start button {
+  background-color: #d4a574 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  border: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 范围结束 - 左侧有背景延伸 */
+.rdp-day_range_end,
+td.rdp-day.rdp-day_range_end {
+  background: linear-gradient(
+    to left,
+    transparent 0%,
+    transparent 50%,
+    #f5e6d3 50%,
+    #f5e6d3 100%
+  ) !important;
+}
+
+.rdp-day_range_end button,
+td.rdp-day.rdp-day_range_end button {
+  background-color: #d4a574 !important;
+  color: white !important;
+  border-radius: 50% !important;
+  border: none !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 范围中间 - 完整背景 */
+.rdp-day_range_middle,
+td.rdp-day.rdp-day_range_middle {
+  background-color: #f5e6d3 !important;
+  border-radius: 0 !important;
+}
+
+.rdp-day_range_middle button,
+td.rdp-day.rdp-day_range_middle button {
+  background-color: transparent !important;
+  color: #8b6f47 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+/* 单独选中的日期 - 圆形 */
+.rdp-day_button[aria-selected='true'],
+.rdp-day.rdp-selected button,
+td.rdp-day.rdp-selected button {
+  background-color: #d4a574 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50% !important;
+}
+
+/* 今天的日期 */
+.rdp-day_today button {
+  color: #d4a574 !important;
+  font-weight: bold !important;
+  border: 2px solid #d4a574 !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+}
+
+/* 今天被选中时 */
+.rdp-day_today.rdp-day_range_start button,
+.rdp-day_today.rdp-day_range_end button,
+.rdp-day_today.rdp-day_range_middle button,
+.rdp-day_today.rdp-day_selected button {
+  background-color: #d4a574 !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* hover 效果 */
+.rdp-day button:hover:not([disabled]) {
+  color: #68502e !important;
+  background-color: #e5d4c1 !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 选中范围内的 hover */
+.rdp-day_range_start button:hover,
+.rdp-day_range_end button:hover {
+  background-color: #c4956a !important;
+  color: white !important;
+}
+
+/* 禁用日期 */
+/* .rdp-day_button[disabled] {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+} */
