@@ -4,12 +4,12 @@ function LoginMessage() {
   return (
     <div className='grid bg-primary-800 '>
       <p className='text-center text-xl py-12 self-center'>
-        Please{' '}
+        请立即{' '}
         <Link href='/login' className='underline text-accent-500'>
-          login
+          登录
         </Link>{' '}
-        to reserve this
-        <br /> cabin right now
+        预订这间小屋
+        <br />
       </p>
     </div>
   )
