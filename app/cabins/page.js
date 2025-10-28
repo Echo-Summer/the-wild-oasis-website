@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import CabinList from '../_components/CabinList'
 import Spinner from '../_components/Spinner'
 import Filter from '../_components/Filter'
+import SkeletonCabinList from '../_components/SkeletonCabinList'
 
 export const revalidate = 3600
 
@@ -28,10 +29,11 @@ export default function Page({ searchParams }) {
 
       <Suspense
         fallback={
-          <div className='grid items-center justify-center'>
-            <Spinner />{' '}
-            <p className='text-xl text-primary-200'>Loading cabin data...</p>
-          </div>
+          // <div className='grid items-center justify-center'>
+          //   <Spinner />{' '}
+          //   <p className='text-xl text-primary-200'>Loading cabin data...</p>
+          // </div>
+          <SkeletonCabinList count={4} />
         }
         key={filter}
       >
